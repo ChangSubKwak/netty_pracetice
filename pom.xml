@@ -45,9 +45,25 @@
                         <encoding>UTF-8</encoding>
                     </configuration>
                 </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
+				<plugin>
+					<groupId>kr.motd.maven</groupId>
+					<artifactId>exec-maven-plugin</artifactId>
+					<configuration>
+						<executable>${java.home}/bin/java</executable>
+						<commandlineArgs>
+							${argLine.common}
+							${argLine.alpnAgent}
+							-classpath %classpath
+							${argLine.leak}
+							${argLine.coverage}
+							${argLine.example}
+							${exampleClass}
+						</commandlineArgs>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
     <dependencies>
         <dependency>
             <groupId>io.netty</groupId>
