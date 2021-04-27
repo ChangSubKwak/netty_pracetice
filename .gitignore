@@ -22,3 +22,4 @@ bin/
 
 naver-checkstyle-rules.xml
 naver-intellij-formatter.xml
+lib/
